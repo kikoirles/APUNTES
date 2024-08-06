@@ -174,6 +174,50 @@ docker run -d –name-vote -p 5000:80 –link redis:redis voting-app
 
 ![image](https://github.com/user-attachments/assets/a5e55f7b-5b11-4079-ba6f-f5be8a0d96e2)
 
+### Crear un Contenedor solo usando Docker Build ###
+**Escribir un Dockerfile**
+**Crea un archivo llamado Dockerfile y añade el siguiente contenido como ejemplo:**
+
+Dockerfile
+Copiar código:
+```shell
+# Usar una imagen base de Ubuntu
+FROM ubuntu:latest
+
+# Instalar actualizaciones y paquetes necesarios
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip
+
+# Copiar el código de la aplicación en el contenedor
+COPY . /app
+
+# Definir el directorio de trabajo
+WORKDIR /app
+
+# Instalar las dependencias de la aplicación
+RUN pip3 install -r requirements.txt
+
+# Especificar el comando para ejecutar la aplicación
+CMD ["python3", "app.py"]
+```
+
+**Construir la imagen**
+
+```shell
+docker build -t <nombre_imagen> .
+```
+
+**Ejecutar un contenedor desde la nueva imagen**
+
+```shell
+docker run -d -p 5000:5000 <nombre_imagen>
+```
+
+### Docker Swarm ###
+
+
+![image-1](https://github.com/user-attachments/assets/8d17cbaf-1e26-4337-9a3f-a7267d28d19c)
 
 
 
