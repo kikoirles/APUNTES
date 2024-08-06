@@ -172,4 +172,5 @@ docker inspect <id_contenedor> | grep APP
 docker run -d –name-vote -p 5000:80 –link redis:redis voting-app
 ```
 
-![alt text](image.png)
+![image](https://github.com/user-attachments/assets/324c7090-5550-4771-b67d-b1c90b6c5711)
+
