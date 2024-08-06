@@ -221,3 +221,153 @@ docker run -d -p 5000:5000 <nombre_imagen>
 
 
 
+### Docker compose crear conjunto de contendores interconectados ###
+
+**docker-compose.yml** 
+
+
+```shell
+version: "3.9"
+
+services:
+
+    redis:
+        image: redis:alpine
+        networks:
+            - frontend
+    db:
+        image: postgres: 15-alpine
+        environment:
+            POSTGRES_USER: "postgres"
+            POSTGRES_PASSWORD: "postgres"
+    volumes:
+        - db-data:/var/lib/postgresql/data 
+    networks:
+        - backend
+    vote:
+        image: dockersamples/examplevotingapp_vote 
+        ports:
+            - 5000:80
+        networks:
+            - frontend
+        deploy:
+            replicas: 2
+    result:
+        image: dockersamples/examplevotingapp_result 
+        ports:
+            - 5001:80
+        networks:
+            - backend
+    worker:
+        image: dockersamples/examplevotingapp_worker 
+        networks:
+            - frontend
+            - backend
+        deploy:
+            replicas: 2
+    networks:
+        frontend:
+        backend:
+    volumes:
+        db-data:
+```
+
+**Ejecutar archivo yml**
+
+```shell
+docker-compose -f {compose file name} up
+```
+
+**Directorios de docker de todo**
+
+```shell
+cd /var/lib/docker
+```
+
+**Login de Docker privado** 
+
+```shell
+docker login private-registry.io
+```
+
+**Doker  private images**
+
+```shell
+docker image tag my-image localhost:5000/my-imgae
+```
+
+**Doker push private images**
+
+```shell
+docker push localhost:5000/my-image
+```
+
+**Doker pull private images**
+
+```shell
+docker pull localhost:5000/my-image
+```
+
+**Docker remote engine en otra sistema**
+
+```shell
+docker -H=10.20.123.2:2375 run nginx
+```
+
+**Docker procesos en maquina**
+
+```shell
+docker exec 55335642def ps -eaf 
+```
+
+```shell
+ps -eaf | grep docker-java-home
+```
+
+**Docker info**
+
+```shell
+docker info | more
+```
+
+**Muestra el historial de una imagen y muestra información sobre cada capa que la compone**
+
+```shell
+docker history 05
+```
+
+**Muestra el real almacenamiento de las imagenes** 
+
+```shell
+docker system  df -v
+```
+
+### Redes de docker ###
+
+**Mostrar redes** 
+
+```shell
+docker network ls
+```
+
+**Inspeccionar red de ls**
+
+```shell
+docker network inspect bridge
+```
+
+**Inspeccionar red de un contenedor o imagen**
+
+```shell
+docker inspect mysql:5.6
+```
+
+**Docker utiliza su propio swervidor de DNS por eso encuentra las propiedades de mysql:5.6**
+**docker bastante completo con parametros**
+
+```shell
+docker run -d --network=wp-mysql-network -e DB_Host=mysql-db -e DB_Password=db_pass123 -p 38080:8080 --name webapp --link mysql-db:mysql-db -d kodekloud/simple-webapp- mysql
+```
+
+
+
