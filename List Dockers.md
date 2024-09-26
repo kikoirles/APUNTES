@@ -1,4 +1,4 @@
-# LISta de dockers 
+# Lista de dockers 
 
 * Wazuh
 
