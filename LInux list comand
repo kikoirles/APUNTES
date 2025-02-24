@@ -1,0 +1,51 @@
+# Comandos de Linux
+
+A continuación, se muestra una lista de comandos de Linux junto con su descripción.
+
+## 1. `whoami`
+Muestra el nombre de usuario actual.
+
+## 2. `id`
+Devuelve la identidad del usuario.
+
+## 3. `hostname`
+Establece o imprime el nombre del sistema host actual.
+
+## 4. `uname`
+Imprime información básica sobre el nombre del sistema operativo y el hardware del sistema.
+
+## 5. `pwd`
+Devuelve el nombre del directorio de trabajo.
+
+## 6. `ifconfig`
+La utilidad `ifconfig` se utiliza para asignar o ver una dirección a una interfaz de red y/o configurar parámetros de la interfaz de red.
+
+## 7. `ip`
+`ip` es una utilidad para mostrar o manipular enrutamiento, dispositivos de red, interfaces y túneles.
+
+## 8. `netstat`
+Muestra el estado de la red.
+
+## 9. `ss`
+Otra utilidad para investigar sockets.
+
+## 10. `ps`
+Muestra el estado del proceso.
+
+## 11. `who`
+Muestra quién ha iniciado sesión.
+
+## 12. `env`
+Imprime el entorno o establece y ejecuta el comando.
+
+## 13. `lsblk`
+Enumera los dispositivos de bloque.
+
+## 14. `lsusb`
+Enumera los dispositivos USB.
+
+## 15. `lsof`
+Enumera los archivos abiertos.
+
+## 16. `lspci`
+Enumera los dispositivos PCI.
