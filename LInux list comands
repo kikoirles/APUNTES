@@ -2,6 +2,9 @@
 
 A continuación, se muestra una lista de comandos de Linux junto con su descripción.
 
+## 0. `sudo lshw -short`
+ Es una herramienta que muestra una lista detallada del hardware de tu sistema
+
 ## 1. `man <tool>`
 Abre páginas de manual para la herramienta especificada.
 
