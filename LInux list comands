@@ -49,3 +49,22 @@ Enumera los archivos abiertos.
 
 ## 16. `lspci`
 Enumera los dispositivos PCI.
+
+
+## 17. `ssh htb-student@[IP address]`
+Comando para acceder a una máquina remota a través de SSH utilizando el usuario `htb-student` y la dirección IP especificada.
+
+## 18. `hostname`
+Muestra o establece el nombre del sistema host (similar al comando `uname -n`).
+
+## 19. `whoami`
+Muestra el nombre de usuario actual en la sesión actual de la terminal.
+
+## 20. `id`
+Muestra la información sobre la identidad del usuario (UID, GID, grupos a los que pertenece).
+
+## 21. `uname -a`
+Muestra toda la información del sistema, como el nombre del kernel, la versión, la arquitectura, entre otros.
+
+## 22. `uname -r`
+Muestra la versión del kernel en ejecución.
