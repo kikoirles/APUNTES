@@ -146,6 +146,6 @@ route-map DMZ_LTE deny 10
 match interface Loopback0
 !
 ip nat inside source static 100.74.255.242 212.166.226.137 route-map DMZ_LTE
-![image](https://github.com/user-attachments/assets/60530529-1ea6-428d-9e50-8211f8b518f1)
+!
 ```
 
