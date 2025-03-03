@@ -76,6 +76,7 @@
 
 ## Plantilla configuracion Huawei BASE
 
+```shell
 ${BEGIN_WIFI}
 #
 wlan global country-code ES
@@ -121,11 +122,13 @@ interface Wlan-Radio0/0/1
 #
 ${END_WIFI}
 #
+```
 
 ## Plantilla configuracion Huawei DHCP
 
 - **`system-view`**:
 
+```shell
 ${BEGIN_DHCP}
 dhcp enable
 dhcp server ping packet 3
@@ -142,9 +145,14 @@ interface ${INTERFAZ_LAN}
 #
 ${END_DHCP}
 #
+```
 
+## Plantilla configuracion Huawei DMZ para redes NEBA , FTTH , HFC
 
-##NEBA
+- **`system-view`**:
+
+## NEBA
+```shell
 acl number 3200
  rule 5 deny tcp destination-port eq 22 
  rule 10 permit ip 
@@ -157,8 +165,11 @@ int cellular0/0/0
 nat static global current-interface inside 192.168.1.10 netmask 255.255.255.255 acl 3200
 y
 #
+```
+
 
 ## FTTH
+```shell
 acl number 3200
  rule 5 deny tcp destination-port eq 22 
  rule 10 permit ip 
@@ -171,8 +182,10 @@ int cellular0/0/0
 nat static global current-interface inside 100.74.255.242 netmask 255.255.255.255 acl 3200
 Y
 #
+```
 
 ## HFC
+```shell
 acl number 3200
  rule 5 deny tcp destination-port eq 22 
  rule 10 permit ip 
@@ -185,6 +198,5 @@ int cellular0/0/0
 nat static global current-interface inside 100.74.255.242 netmask 255.255.255.255 acl 3200
 Y
 #
-![image](https://github.com/user-attachments/assets/0181a941-6054-4bb2-a245-bb40bbf15cae)
-
+```
 
