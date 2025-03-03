@@ -74,3 +74,50 @@
 - **`dis alarm`**: Descripción: Muestra las alarmas activas o los eventos de error registrados en el sistema, permitiendo conocer problemas críticos en el dispositivo.
 - **`dis process`**:Descripción: Muestra los procesos que están ejecutándose en el dispositivo, incluyendo el uso de CPU de cada proceso.
 
+## Plantilla configuracion Huawei
+
+${BEGIN_WIFI}
+#
+wlan global country-code ES
+y
+#
+interface Wlan-Bss2
+ port hybrid tagged vlan 1
+#
+interface Wlan-Bss3
+ port hybrid tagged vlan 1
+#
+wlan
+ wmm-profile name WIFICLIENTE id 1
+ traffic-profile name WIFICLIENTE id 1
+ security-profile name WIFI24 id 1
+  security-policy wpa2
+  wpa2 authentication-method psk pass-phrase cipher ${PASS_SSID_24GHZ} encryption-method ccmp
+ service-set name WIFI24 id 0
+  Wlan-Bss 2
+  ssid ${SSID_24GHZ}
+  traffic-profile id 1
+  security-profile id 1
+ radio-profile name WIFI24 id 1
+  wmm-profile id 1
+ security-profile name WIFI5 id 2
+  security-policy wpa2
+  wpa2 authentication-method psk pass-phrase cipher ${PASS_SSID_5GHZ} encryption-method ccmp
+ service-set name WIFI5 id 1
+  Wlan-Bss 3
+  ssid ${SSID_5GHZ}
+  traffic-profile id 1
+  security-profile id 2
+ radio-profile name WIFI5 id 2
+  wmm-profile id 1
+#
+interface Wlan-Radio0/0/0
+ radio-profile id 1
+ service-set id 0 wlan 1
+#
+interface Wlan-Radio0/0/1
+ radio-profile id 2
+ service-set id 1 wlan 1
+#
+${END_WIFI}
+#
