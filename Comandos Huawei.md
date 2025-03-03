@@ -74,7 +74,7 @@
 - **`dis alarm`**: Descripción: Muestra las alarmas activas o los eventos de error registrados en el sistema, permitiendo conocer problemas críticos en el dispositivo.
 - **`dis process`**:Descripción: Muestra los procesos que están ejecutándose en el dispositivo, incluyendo el uso de CPU de cada proceso.
 
-## Plantilla configuracion Huawei
+## Plantilla configuracion Huawei BASE
 
 ${BEGIN_WIFI}
 #
@@ -121,3 +121,70 @@ interface Wlan-Radio0/0/1
 #
 ${END_WIFI}
 #
+
+## Plantilla configuracion Huawei DHCP
+
+- **`system-view`**:
+
+${BEGIN_DHCP}
+dhcp enable
+dhcp server ping packet 3
+dhcp server ping timeout 400
+#
+ip pool POOLDHCP
+ gateway-list ${IP_LAN}
+ network ${RED_LAN} mask ${MASK_LAN}
+ excluded-ip-address ${DHCP_PRIMERA_IP_EXCL} ${DHCP_ULTIMA_IP_EXCL}
+ dns-list ${DHCP_DNS_PRIMARIO} ${DHCP_DNS_SECUNDARIO}
+#
+interface ${INTERFAZ_LAN}
+ dhcp select global
+#
+${END_DHCP}
+#
+
+
+##NEBA
+acl number 3200
+ rule 5 deny tcp destination-port eq 22 
+ rule 10 permit ip 
+
+int GigabitEthernet0/0/8.24
+nat static global interface LoopBack 0 inside 192.168.1.10 netmask 255.255.255.255
+Y
+
+int cellular0/0/0
+nat static global current-interface inside 192.168.1.10 netmask 255.255.255.255 acl 3200
+y
+#
+
+## FTTH
+acl number 3200
+ rule 5 deny tcp destination-port eq 22 
+ rule 10 permit ip 
+
+int GigabitEthernet0/0/8.1500
+nat static global interface LoopBack 0 inside 100.74.255.242 netmask 255.255.255.255
+Y
+
+int cellular0/0/0
+nat static global current-interface inside 100.74.255.242 netmask 255.255.255.255 acl 3200
+Y
+#
+
+## HFC
+acl number 3200
+ rule 5 deny tcp destination-port eq 22 
+ rule 10 permit ip 
+
+int GigabitEthernet0/0/8
+nat static global interface LoopBack 0 inside 100.74.255.242 netmask 255.255.255.255
+Y
+
+int cellular0/0/0
+nat static global current-interface inside 100.74.255.242 netmask 255.255.255.255 acl 3200
+Y
+#
+![image](https://github.com/user-attachments/assets/0181a941-6054-4bb2-a245-bb40bbf15cae)
+
+
