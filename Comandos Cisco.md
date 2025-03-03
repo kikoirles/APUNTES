@@ -64,3 +64,88 @@
 - **`class-map [nombre]`**: Crea una clase de tráfico.
 - **`policy-map [nombre]`**: Crea una política de QoS.
 - **`service-policy input [nombre]`**: Aplica la política de entrada en una interfaz.
+
+## Plantilla de configuración WiFi en Cisco:
+
+```shell
+${BEGIN_WIFI}
+#
+interface Dot11Radio0
+ ssid ${SSID_24GHZ}
+ authentication open
+ encryption wep 64 key 0 ${PASS_SSID_24GHZ}
+ radio network mode mixed
+#
+interface Dot11Radio1
+ ssid ${SSID_5GHZ}
+ authentication open
+ encryption wep 64 key 0 ${PASS_SSID_5GHZ}
+ radio network mode mixed
+#
+${END_WIFI}
+#
+```
+
+## Plantilla de configuración DHCP en Cisco
+
+```shell
+system-view:
+${BEGIN_DHCP}
+ip dhcp excluded-address ${DHCP_PRIMERA_IP_EXCL} ${DHCP_ULTIMA_IP_EXCL}
+ip dhcp pool POOLDHCP
+ network ${RED_LAN} ${MASK_LAN}
+ default-router ${IP_LAN}
+ dns-server ${DHCP_DNS_PRIMARIO} ${DHCP_DNS_SECUNDARIO}
+#
+interface ${INTERFAZ_LAN}
+ ip address dhcp
+ no shutdown
+#
+${END_DHCP}
+#
+```
+
+## Plantilla de configuración DMZ para redes NEBA, FTTH, y HFC en Cisco:
+
+# NEBA:
+```shell
+route-map DMZ_PPAL deny 10
+match interface cellular0/2/0
+!
+ip nat inside source static 192.168.253.2 46.27.194.104 route-map DMZ_PPAL
+!
+route-map DMZ_LTE deny 10
+match interface GigabitEthernet0/0/0.24
+!
+ip nat inside source static 192.168.253.2 62.87.126.214 route-map DMZ_LTE
+
+****62.87.126.214--ipfija//46.27.194.104 DMZ*******
+```
+
+# FTTH:
+```shell
+route-map DMZ_PPAL deny 10
+match interface cellular0/2/0
+!
+ip nat inside source static 100.74.255.242 77.231.20.220 (cambiar por la loopback) route-map DMZ_PPAL
+!
+route-map DMZ_LTE deny 10
+match interface GigabitEthernet0/0/0.1500
+!
+ip nat inside source static 100.74.255.242 62.87.43.146 (cambiar por la ipfija) route-map DMZ_LTE
+```
+
+# HFC
+```shell
+route-map DMZ_PPAL deny 10
+match interface cellular0/2/0
+!
+ip nat inside source static 100.74.255.242 77.228.182.188 route-map DMZ_PPAL
+!
+route-map DMZ_LTE deny 10
+match interface Loopback0
+!
+ip nat inside source static 100.74.255.242 212.166.226.137 route-map DMZ_LTE
+![image](https://github.com/user-attachments/assets/60530529-1ea6-428d-9e50-8211f8b518f1)
+```
+
