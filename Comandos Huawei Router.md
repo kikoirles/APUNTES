@@ -24,6 +24,7 @@
 - **`tracert [dirección IP]`**: Realiza un seguimiento de la ruta hacia un destino.
 - **`display ip routing-table`**: Muestra las rutas en la tabla de enrutamiento.
 - **`display interface brief`**: Muestra un resumen de todas las interfaces y su estado.
+- **`display ip routing-table`**: onsultar los valores que se almacenan en la RIB y FIB en los routers Huawei
 
 ## Comandos de administración
 
