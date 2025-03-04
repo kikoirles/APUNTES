@@ -25,6 +25,8 @@
 - **`traceroute [dirección IP]`**: Realiza un seguimiento de la ruta hacia un destino.
 - **`show ip route`**: Muestra las rutas en la tabla de enrutamiento.
 - **`show ip interface brie`**: Muestra un resumen de las interfaces.
+- **`show ip route`**: Para ver la RIB (Routing Information Base)
+- **`show ip cef`**: Para ver la FIB (Routing Information Base)
 
 ## Comandos de administración
 
