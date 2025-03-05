@@ -1,4 +1,4 @@
-# Comandos más importantes de Huawei
+# Comandos más importantes de Huawei Router
 
 ## Comandos básicos
 
@@ -200,4 +200,3 @@ nat static global current-interface inside 100.74.255.242 netmask 255.255.255.25
 Y
 #
 ```
-
