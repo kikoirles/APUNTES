@@ -1,4 +1,4 @@
-# Comandos más importantes de Cisco
+# Comandos más importantes de Cisco Router 
 
 ## Comandos básicos
 
@@ -30,6 +30,8 @@
 
 ## Comandos de administración
 
+- **`system-view`**: Entra en el modo de usuario privilegiado
+- **`write memory`**: Guarda la configuración
 - **`copy running-config startup-config`**: Guarda la configuración activa en la memoria de inicio.
 - **`reload`**: Reinicia el dispositivo.
 - **`show logging`**: Muestra los mensajes del registro del sistema.
@@ -150,4 +152,5 @@ match interface Loopback0
 ip nat inside source static 100.74.255.242 212.166.226.137 route-map DMZ_LTE
 !
 ```
+
 
