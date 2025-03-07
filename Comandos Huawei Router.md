@@ -1,16 +1,15 @@
 # Comandos más importantes de Huawei Router
 
 ## Comandos básicos
-
 - **`system-view`**: Entra en el modo de configuración global.
 - **`quit`**: Sale del modo actual.
 - **`enable`**: Cambia al modo privilegiado.
 - **`display current-configuration`**: Muestra la configuración activa.
 - **`display version`**: Muestra la información del sistema, como la versión del software y la memoria.
 - **`display interface`**: Muestra el estado y las estadísticas de todas las interfaces.
+- **`dis pool`**: Para ver las piscinas de DHCP.
 
 ## Comandos de configuración
-
 - **`hostname [nombre]`**: Cambia el nombre del dispositivo.
 - **`interface [tipo] [número]`**: Entra en el modo de configuración de una interfaz específica.
 - **`ip address [dirección IP] [máscara]`**: Asigna una dirección IP a una interfaz.
@@ -19,22 +18,19 @@
 - **`ip route-static [dirección IP] [máscara] [puerta de enlace]`**: Configura una ruta estática.
 
 ## Comandos de diagnóstico
-
 - **`ping [dirección IP]`**: Realiza una prueba de conectividad (ping) hacia una dirección IP.
 - **`tracert [dirección IP]`**: Realiza un seguimiento de la ruta hacia un destino.
 - **`display ip routing-table`**: Muestra las rutas en la tabla de enrutamiento.
 - **`display interface brief`**: Muestra un resumen de todas las interfaces y su estado.
-- **`display ip routing-table`**: onsultar los valores que se almacenan en la RIB y FIB en los routers Huawei
+- **`display ip routing-table`**: Consulta los valores que se almacenan en la RIB y FIB en los routers Huawei.
 
 ## Comandos de administración
-
 - **`save`**: Guarda la configuración actual en la memoria de inicio.
 - **`reset`**: Reinicia el dispositivo o una interfaz específica.
 - **`reboot`**: Reinicia el dispositivo.
 - **`display logbuffer`**: Muestra el registro de eventos del sistema.
 
 ## Comandos de seguridad
-
 - **`enable secret [contraseña]`**: Establece una contraseña secreta para el acceso al modo privilegiado.
 - **`user-interface console 0`**: Entra en la configuración de la consola.
 - **`set authentication password [contraseña]`**: Establece una contraseña de acceso.
@@ -42,38 +38,84 @@
 - **`authentication-mode [modo]`**: Configura el modo de autenticación de la consola.
 
 ## Comandos de VLAN
-
 - **`vlan [número]`**: Crea una VLAN.
-- **`name [nombre de VLAN]`**: Asigna un nombre a la VLAN
+- **`name [nombre de VLAN]`**: Asigna un nombre a la VLAN.
 
-## Comando para troubleshooting basico 
+## Comando para troubleshooting básico
+- **`dis ver`**: Ver versión, uptime, información de dispositivo y firmware.
+- **`dis ens`**: Mostrar el número de serie de (ESN).
+- **`dis arp`**: Mapeo de dirección IP a dirección MAC (Address Resolution Protocol).
+- **`dis esd`**: Detalle sobre los equipos e interfaces conectadas (Serial Number).
+- **`dis bgp peer`**: Detalles de las sesiones BGP activas.
+- **`dis ip int b`**: Resumen de las interfaces de red.
+- **`dis int brief`**: Obtiene el estado y errores de interfaces, incluyendo VLAN.
+- **`ping -a 192.168.1.1 8.8.8.8`**: Ping a una VLAN (192.168.1.1) para comprobar la conectividad.
+- **`dis cur`**: Ver la configuración actual del dispositivo.
+- **`dis arp brief`**: Muestra la tabla ARP del dispositivo, que asigna direcciones IP a direcciones MAC en la red local.
+- **`tracert -a 192.168.1.1 8.8.8.8`**: Rastrea la ruta que toma un paquete desde el origen hasta el destino.
 
-- **`dis ver`**: Ver version uptime dev info firmware
-- **`dis ens`**: Mostrar el numero de serie de (ESN)
-- **`dis arp`**: Adress resolution mapeo de dirrecion ip a dirreccion MAC
-- **`dis esd`**: Serial number detalle sobre los equipos e interfaces conectadas 
-  
-- **`dis bgp peer`**: Detalles de los BGP sesiones bgp activos
-- **`dis ip int b`**:s efectivamente utilizado para mostrar un resumen de las interfaces de red
-- **`dis int brief`**: Obtener Vlan Error de interfaz
-- **`ping -a 192.168.1.1 8.8.8.8`**: Ping a Vlan(192.168.1.1 Conectividad
-- **`dis cur`**: Ver la configuración actual del dispositivo
-- **`dis arp brief`**:Muestra la tabla ARP (Address Resolution Protocol) del dispositivo, que asigna direcciones IP a direcciones MAC en la red local
-- **`tracert -a 192.168.1.1 8.8.8.8`**: se utiliza para rastrear la ruta (hops) que toma un paquete desde el origen a destino.
-
-## Comandos de hardware 
-
+## Comandos de hardware
 - **`dis hardware`**: Muestra información detallada sobre los módulos de hardware del dispositivo (tarjetas de red, módulos de memoria, etc.).
 - **`dis memory`**: Muestra el uso de la memoria del dispositivo, incluyendo la memoria total, utilizada, libre y el porcentaje de utilización.
-- **`dis cpu-usage`**: Muestra el porcentaje de uso de la CPU del dispositivo, indicando la carga de trabajo en el procesador.
-- **`dis system-resource`**: Muestra el uso de recursos del sistema, como CPU, memoria y otros componentes, proporcionando una visión general de la carga del sistema
+- **`dis cpu-usage`**: Muestra el porcentaje de uso de la CPU del dispositivo.
+- **`dis system-resource`**: Muestra el uso de recursos del sistema (CPU, memoria y otros componentes).
+- **`dis fun`**: Muestra el estado de los ventiladores del dispositivo, incluyendo su velocidad y cualquier error relacionado.
+- **`dis power`**: Muestra el estado de la fuente de alimentación del dispositivo, indicando si está funcionando correctamente y detalles sobre su rendimiento.
+- **`dis environment`**: Muestra información sobre el entorno del dispositivo, como la temperatura interna y el estado de los ventiladores.
+- **`dis logbuffer`**: Muestra los mensajes de registro almacenados en el búfer del sistema.
+- **`dis alarm`**: Muestra las alarmas activas o los eventos de error registrados en el sistema.
+- **`dis process`**: Muestra los procesos que están ejecutándose en el dispositivo, incluyendo el uso de CPU de cada proceso.
 
-- **`dis fun`**: Descripción: Muestra el estado de los ventiladores del dispositivo, incluyendo su velocidad y cualquier error relacionado con ellos.
-- **`dis power`**: Descripción: Muestra el estado de la fuente de alimentación del dispositivo, indicando si está funcionando correctamente y detalles sobre su rendimiento
-- **`dis environment`**: Descripción: Muestra información sobre el entorno del dispositivo, como la temperatura interna, el estado de los ventiladores, y otros parámetros ambientales importantes.
-- **`dis logbuffer`**: Descripción: Muestra los mensajes de registro almacenados en el búfer del sistema, lo que ayuda a identificar problemas pasados o eventos importantes ocurridos en el dispositivo.
-- **`dis alarm`**: Descripción: Muestra las alarmas activas o los eventos de error registrados en el sistema, permitiendo conocer problemas críticos en el dispositivo.
-- **`dis process`**:Descripción: Muestra los procesos que están ejecutándose en el dispositivo, incluyendo el uso de CPU de cada proceso.
+## Otros comandos útiles
+
+### Comandos de red
+- **`ip route dynamic`**: Muestra las rutas dinámicas en la tabla de enrutamiento.
+- **`display ospf`**: Muestra el estado del protocolo OSPF.
+- **`display bgp`**: Muestra información sobre las sesiones BGP.
+- **`dis lldp`**: Muestra información sobre el protocolo LLDP (Link Layer Discovery Protocol).
+- **`display ip interface brief`**: Muestra un resumen de las interfaces IP, sus direcciones IP y su estado.
+- **`display ip dhcp binding`**: Muestra las direcciones IP asignadas por el servidor DHCP.
+- **`display vlan brief`**: Muestra un resumen de las VLANs configuradas en el dispositivo.
+
+### Comandos de QoS (Calidad de Servicio)
+- **`display qos policy`**: Muestra las políticas de calidad de servicio configuradas.
+- **`qos policy [nombre]`**: Crea o entra en una política de QoS.
+- **`traffic classifier`**: Configura un clasificador de tráfico para QoS.
+- **`traffic behavior`**: Configura el comportamiento del tráfico para políticas de QoS.
+
+### Comandos de NAT (Traducción de direcciones de red)
+- **`display nat session`**: Muestra las sesiones activas de NAT.
+- **`ip nat inside source`**: Configura la traducción de direcciones IP internas a direcciones IP externas.
+- **`ip nat outside source`**: Configura la traducción de direcciones IP externas a direcciones IP internas.
+
+### Comandos de VPN (Red Privada Virtual)
+- **`display vpn`**: Muestra el estado de las conexiones VPN.
+- **`ipsec policy`**: Configura la política de IPsec para conexiones VPN.
+- **`pptp enable`**: Habilita el servidor PPTP para conexiones VPN.
+
+### Comandos de NetFlow
+- **`netstream`**: Activa NetStream, la función de monitoreo y recolección de datos de tráfico.
+- **`netstream exporter`**: Configura un exportador de NetStream.
+- **`display netstream`**: Muestra estadísticas y datos de NetStream.
+
+### Comandos de STP (Spanning Tree Protocol)
+- **`display stp`**: Muestra el estado del protocolo Spanning Tree.
+- **`stp enable`**: Habilita el protocolo STP en el dispositivo.
+- **`stp region`**: Configura las regiones de STP.
+
+### Comandos de Redundancia y Alta Disponibilidad
+- **`display device`**: Muestra la información de los dispositivos en un entorno de alta disponibilidad.
+- **`huawei cfs`**: Configura el sistema de conmutación por error (failover) y las políticas de redundancia.
+- **`display interface gigabitethernet`**: Muestra el estado detallado de las interfaces Gigabit Ethernet.
+
+### Comandos de Tráfico
+- **`traffic-policy`**: Configura políticas de tráfico para manejar el ancho de banda y la calidad de servicio.
+- **`dis traffic statistics`**: Muestra estadísticas del tráfico en interfaces específicas.
+
+### Comandos de DHCP
+- **`ip dhcp enable`**: Habilita el servidor DHCP en el dispositivo.
+- **`display dhcp server`**: Muestra la configuración y el estado del servidor DHCP.
+- **`ip dhcp pool [nombre]`**: Configura un grupo de direcciones DHCP.
 
 ## Plantilla configuracion Huawei BASE
 
