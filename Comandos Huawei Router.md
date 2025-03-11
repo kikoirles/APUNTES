@@ -61,6 +61,9 @@
 - **`dis system-resource`**: Muestra el uso de recursos del sistema (CPU, memoria y otros componentes).
 - **`dis fun`**: Muestra el estado de los ventiladores del dispositivo, incluyendo su velocidad y cualquier error relacionado.
 - **`dis power`**: Muestra el estado de la fuente de alimentación del dispositivo, indicando si está funcionando correctamente y detalles sobre su rendimiento.
+- **`dis power-supply`**:comando muestra información detallada sobre las fuentes de alimentación conectadas al dispositivo.
+- **`dis system-power`**: Se utiliza en algunos dispositivos Huawei para mostrar el estado del sistema de energía, incluyendo el consumo de energía y el estado de las fuentes
+- **`dis power redundancy`**:se utiliza para verificar el estado de la redundancia de la alimentación en equipos que cuentan con múltiples fuentes de energía
 - **`dis environment`**: Muestra información sobre el entorno del dispositivo, como la temperatura interna y el estado de los ventiladores.
 - **`dis logbuffer`**: Muestra los mensajes de registro almacenados en el búfer del sistema.
 - **`dis alarm`**: Muestra las alarmas activas o los eventos de error registrados en el sistema.
