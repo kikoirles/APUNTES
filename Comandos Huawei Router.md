@@ -53,6 +53,7 @@
 - **`dis cur`**: Ver la configuración actual del dispositivo.
 - **`dis arp brief`**: Muestra la tabla ARP del dispositivo, que asigna direcciones IP a direcciones MAC en la red local.
 - **`tracert -a 192.168.1.1 8.8.8.8`**: Rastrea la ruta que toma un paquete desde el origen hasta el destino.
+- **`display bgp vpnv4 all routing-table`**: Se utiliza para mostrar información de enrutamiento BGP VPNv4 en dispositivos como los que ejecutan Huawei VRP
 
 ## Comandos de hardware
 - **`dis hardware`**: Muestra información detallada sobre los módulos de hardware del dispositivo (tarjetas de red, módulos de memoria, etc.).
