@@ -93,6 +93,8 @@
 
 ### Comandos de VPN (Red Privada Virtual)
 - **`display vpn`**: Muestra el estado de las conexiones VPN.
+- **`display ip vpn-instance`**:Ver todas las VPN configuradas
+- **`display ip vpn-instance [vpn-instance-name] interface`**: Muestra el estado de la interfaz de la vpn
 - **`ipsec policy`**: Configura la política de IPsec para conexiones VPN.
 - **`pptp enable`**: Habilita el servidor PPTP para conexiones VPN.
 
