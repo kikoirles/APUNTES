@@ -78,5 +78,6 @@ Provide the ID of the agent to extract the key (or '\q' to quit): 001
 Agent key information for '001' is:
 MDAxIFBDX1dJTkRPV1MgMTkyLjE2OC4yLjE4MiAzMGIyNDRmYTQ0N2RmMjk1ZjJhNGM0Yjk2NzIxYzM1NDhjZDlmMzZkZWI0MmJhZTY3OWZjMjIxNjE4ODhjMjgw
 ```
+<img width="1546" height="533" alt="image" src="https://github.com/user-attachments/assets/e75d9b5f-53f2-4d2d-9390-4286be1a47b0" />
 
 
