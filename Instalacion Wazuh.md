@@ -53,7 +53,30 @@ Descarga el instalador del agente desde la documentación oficial de Wazuh.
 https://packages.wazuh.com/4.x/windows/wazuh-agent-4.7.3-1.msi
 ```
 Ejecuta el instalador en el equipo Windows.
+Durante la instalación, configura la IP del Wazuh Manager (Linux).  
 
-Durante la instalación, configura la IP del Wazuh Manager (Linux).
 
 Registrar el agente en el servidor Linux
+```shell
+/var/ossec/bin/manage_agents
+```
+Selecciona A para añadir un nuevo agente
+Introduce nombre del agente (ej: WIN-PC01)
+Asigna la IP del equipo Windows
+Añadir o obtner KEY "DRmYTQ0N2RmMjk1ZjJhNGM0Yjk2NzIxYzM1NDhjZDlmMzZkZWI0MmJhZTY3OWZjMjIxNjE4ODhjMjgw"
+
+```shell
+/var/ossec/bin/manage_agents
+```
+```shell
+Choose your action: A,E,L,R or Q: E
+
+Available agents:
+   ID: 001, Name: PC_WINDOWS, IP: 192.168.2.182
+Provide the ID of the agent to extract the key (or '\q' to quit): 001
+
+Agent key information for '001' is:
+MDAxIFBDX1dJTkRPV1MgMTkyLjE2OC4yLjE4MiAzMGIyNDRmYTQ0N2RmMjk1ZjJhNGM0Yjk2NzIxYzM1NDhjZDlmMzZkZWI0MmJhZTY3OWZjMjIxNjE4ODhjMjgw
+```
+
+
