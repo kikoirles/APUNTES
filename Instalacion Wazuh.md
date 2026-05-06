@@ -42,3 +42,18 @@ habilitar Wazuh al arrancar el sistema
 ```shell
 sudo systemctl enable wazuh-manager
 ```
+
+# Añadir agente de Windows al servidor
+
+Instalación del agente Wazuh en Windows
+
+Descarga el instalador del agente desde la documentación oficial de Wazuh.
+
+```shell
+https://packages.wazuh.com/4.x/windows/wazuh-agent-4.7.3-1.msi
+```
+Ejecuta el instalador en el equipo Windows.
+
+Durante la instalación, configura la IP del Wazuh Manager (Linux).
+
+Registrar el agente en el servidor Linux
