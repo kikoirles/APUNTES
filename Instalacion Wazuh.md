@@ -15,7 +15,11 @@ apt-get install curl
 Luego instalamos el siguiente conjunto de àquetes para el sistema
 
 ```shell
-curl -sO https://packages.wazuh.com/4.9/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
+apt install vim curl apt-transport-https unzip wget libcap2-bin software-properties-common lsb-release gnupg2
+```
+
+```shell
+root@WAZUH01:~# curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
 ```
 
 Si la instalacion ha funcionado correctamente mostrara un contraseña y usuario que deberemos colocar a el dasboard para iniciar sesion por primera vez 
@@ -31,9 +35,10 @@ INFO: Installation finished.
 Accedemos en el navedor a nuestra ip 
 
 ```shell
-http://192.168.2.113
+https://192.168.2.108:443
 ```
 
+habilitar Wazuh al arrancar el sistema
 ```shell
-http://localhost
+sudo systemctl enable wazuh-manager
 ```
