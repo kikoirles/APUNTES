@@ -19,7 +19,7 @@ apt install vim curl apt-transport-https unzip wget libcap2-bin software-propert
 ```
 
 ```shell
-root@WAZUH01:~# curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
+curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
 ```
 
 Si la instalacion ha funcionado correctamente mostrara un contraseña y usuario que deberemos colocar a el dasboard para iniciar sesion por primera vez 
